@@ -1,7 +1,7 @@
 {
   "name": "react-stockcharts",
   "version": "0.7.8",
-  "description": "Highly customizable stock charts with ReactJS and d3",
+  "description": "only indicators from Highly customizable stock charts with ReactJS and d3",
   "main": "src/index.js",
   "module": "src/index.js",
   "author": {
@@ -13,10 +13,8 @@
     "clean": "rimraf -rf ./build",
     "modernizr": "modernizr -c config/modernizr-config.json -d ./build/dist/modernizr.js",
     "watch": "npm run clean && npm run modernizr && cross-env IP=0.0.0.0 PORT=8080 BABEL_ENV=watch webpack-dev-server --config config/webpack.config.js --env watch",
-    "docs": "npm run build:docs && ncp docs/images/ build/images && ncp docs/data/ build/data",
-    "build:docs": "echo 'DOCS - BUILD' && cross-env BABEL_ENV=es webpack --config config/webpack.config.js --env docs",
     "prebuild": "npm run clean && npm run lint",
-    "build": "npm run modernizr && npm run docs",
+    "build": "npm run modernizr",
     "babel:cjs:watch": "npm run babel:cjs -- -watch",
     "babel:es:watch": "npm run babel:es -- -watch",
     "babel:cjs": "cross-env BABEL_ENV=cjs babel src --out-dir build --source-maps",
@@ -35,20 +33,7 @@
   },
   "dependencies": {
     "d3-array": "^1.2.1",
-    "d3-collection": "^1.0.4",
-    "d3-force": "^1.1.0",
-    "d3-format": "^1.2.1",
-    "d3-interpolate": "^1.1.6",
-    "d3-path": "^1.0.5",
-    "d3-scale": "^1.0.7",
-    "d3-selection": "^1.2.0",
-    "d3-shape": "^1.2.0",
-    "d3-time": "^1.0.8",
-    "d3-time-format": "^2.1.1",
-    "debug": "^3.1.0",
-    "lodash.flattendeep": "^4.4.0",
-    "prop-types": "^15.6.0",
-    "save-svg-as-png": "^1.4.5"
+    "d3-scale": "^1.0.7"
   },
   "peerDependencies": {
     "react": "^15.0.0 || ^16.0.0",
